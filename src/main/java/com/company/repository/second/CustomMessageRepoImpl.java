@@ -16,6 +16,7 @@ import java.util.List;
 @Repository
 @RequiredArgsConstructor
 public class CustomMessageRepoImpl implements CustomMessageRepo {
+
     @PersistenceContext
     private final EntityManager entityManager;
 

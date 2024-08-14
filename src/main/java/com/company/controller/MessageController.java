@@ -1,6 +1,7 @@
 package com.company.controller;
 
 import com.company.dto.MessageCriteria;
+import com.company.entity.Message;
 import com.company.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,12 @@ public class MessageController {
     private final MessageService messageService;
 
     @PostMapping("/message/all")
-    public ResponseEntity<?> add(@RequestBody MessageCriteria criteria) {
+    public ResponseEntity<?> get(@RequestBody MessageCriteria criteria) {
         return messageService.getAll(criteria);
+    }
+ @PostMapping("/message/create")
+    public ResponseEntity<?> create(@RequestBody Message message) {
+        return messageService.save(message);
     }
 
 }
