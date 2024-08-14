@@ -1,0 +1,12 @@
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 5000
+    max-connections: 5000
+
+spring:
+  application:
+    name: max-connections
+  profiles:
+    active: prod
